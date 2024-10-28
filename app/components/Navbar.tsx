@@ -26,7 +26,7 @@ const Navbar = async () => {
                                 </Link>
                                 <form action={async () => {
                                     "use server"
-                                    await signOut()
+                                    await signOut({ redirectTo: '/' })
                                 }}>
 
 
@@ -37,7 +37,7 @@ const Navbar = async () => {
 
 
                                 <Link href={`/user/${session?.user?.id}`}>
-                                    <span>{session?.user?.name}</span>
+                                    <span>{session?.user?.name?.split(" ")[0]}</span>
                                 </Link>
                             </>
 
